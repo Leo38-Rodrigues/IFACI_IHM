@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+build/
+
+bin/
+obj/
+
+.expo/
+
+.env
+.DS_Store

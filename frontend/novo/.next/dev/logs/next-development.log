@@ -1,0 +1,10 @@
+[00:00:01.902] Server  LOG     ✓ Ready in 1351ms
+[00:00:05.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.065] Browser LOG     {}
+[00:00:28.287] Browser LOG     {}
+[00:00:31.048] Browser LOG     {}
+[00:00:31.293] Browser LOG     {}
+[00:00:31.293] Browser LOG     {}
+[00:00:52.396] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:04.250] Browser LOG     {"code":201,"msg":"Usuário Criado com sucesso!"}
+[00:01:16.620] Browser LOG     {"code":201,"msg":"Usuário Criado com sucesso!"}
