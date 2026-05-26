@@ -9,11 +9,11 @@ api.use(cors())
 const dados = []
 const iot_data = []
 const devices = []
-let id = 0;
+
 
 function criaSensor(device_id) {
      const newData = {
-            id: id,
+            id: device_id,
             device_id: device_id,
             temperatura: 0,
             pressao: 0,
@@ -60,20 +60,31 @@ api.get('/devices', (req, res) => {
 
     res.status(200).send(output)
 })
+api.post('/novoDispositivo', (req, res) => {
 
-api.post('/novoDispositivo', (req, res)=>{
-    const {
-        setor,
-        equipamento} = req.body
-        id++;
-    if(req.body === null){
+    const { setor, equipamento } = req.body
+
+    if (!req.body) {
         return res.status(400).send("Erro ao cadastrar dispositivo")
     }
-    else{
-        devices.push({id: id, device_data: req.body})
-        criaSensor()
-        return res.status(201).send("Dispositivo cadastrado com sucesso!")
+
+    // pega menor ID disponível
+    let novoId = 1
+
+    while (devices.some(device => device.id === novoId)) {
+        novoId++
     }
+
+    const novoDevice = {
+        id: novoId,
+        device_data: req.body
+    }
+
+    devices.push(novoDevice)
+
+    criaSensor(novoId)
+
+    return res.status(201).send("Dispositivo cadastrado com sucesso!")
 })
 
 api.post('/newData', (req, res)=>{
@@ -125,14 +136,13 @@ api.put('/sensor/:id', (req,res)=>{
 
 api.delete('/device/:id', (req, res) => {
 
-    const id = parseInt(req.params.id)
-    
+    const deviceId = parseInt(req.params.id)
+
     const deviceIndex = devices.findIndex(
-        d => d.id === id
+        d => d.id === deviceId
     )
 
     if (deviceIndex === -1) {
-
         return res.status(404).send({
             message: "Dispositivo não encontrado"
         })
@@ -141,7 +151,7 @@ api.delete('/device/:id', (req, res) => {
     devices.splice(deviceIndex, 1)
 
     const sensorIndex = iot_data.findIndex(
-        s => s.id === id
+        s => s.device_id === deviceId
     )
 
     if (sensorIndex !== -1) {
@@ -152,8 +162,6 @@ api.delete('/device/:id', (req, res) => {
         message: "Dispositivo removido"
     })
 })
-
-
 
 const porta = 8080;
 api.listen(porta, ()=>{

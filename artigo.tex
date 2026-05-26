@@ -1,0 +1,125 @@
+\documentclass[12pt]{unisenaiclass}
+\usepackage{unisenaistyle}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{caption}
+
+\usepackage{csquotes} % Recomendado com biblatex
+\usepackage[backend=biber, style=abnt]{biblatex} % ou 'style=apa', 'numeric', etc.
+\addbibresource{referencias.bib} % arquivo .bib com as referências
+
+\title{TÍTULO DO ARTIGO}
+\subtitle{ARTICLE TITLE}
+
+\author{
+    \textbf{Gizela Alves Pieri Santos } \thanks{}\\
+    \textbf{} \thanks{}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{resumo}
+Esse é a seção do resumo
+\end{resumo}
+
+\begin{justify}
+    \textbf{Palavras-chave:}  IoT; Backend; API; Sensores; Automação.
+\end{justify}
+
+\begin{abstract1}
+This paper presents the development of an IoT hub integrated with a Node.js backend and a Next.js web interface. The system enables monitoring of temperature, humidity, pressure, and presence sensors, as well as remote control of an actuator (relay). The methodology involved the creation of a RESTful API to ensure communication between frontend and backend, providing scalability and interoperability. Results demonstrate the feasibility of the solution for residential, industrial, and agricultural automation applications.
+\end{abstract1}
+
+\begin{justify}
+    \textbf{Keywords:}IoT; Backend; API; Sensors; Automation.  
+\end{justify}
+
+
+
+\section{Introdução}
+A Internet das Coisas (IoT) tem se consolidado como uma tecnologia essencial para a automação e monitoramento de dispositivos. Este trabalho busca apresentar um sistema capaz de integrar sensores e atuadores a uma plataforma web, permitindo controle remoto e análise em tempo real. O objetivo é demonstrar a viabilidade técnica da solução e suas possíveis aplicações em diferentes contextos.
+\section{Revisão de Literatura}
+Segundo Aguiar (2023), a Internet das Coisas (IoT) pode ser descrita como uma rede de objetos físicos conectados à internet, capazes de interagir por meio de sensores e softwares. O autor destaca que a utilização de APIs RESTful é fundamental para conectar o mundo físico ao digital, permitindo que dispositivos troquem dados de forma eficiente e escalável.
+
+De acordo com "Rodrigues (2024), a expansão de funcionalidades em sistemas IoT depende diretamente da integração com APIs HTTP, que possibilitam maior flexibilidade e controle remoto dos dispositivos. A autora enfatiza que o uso de arquiteturas REST garante interoperabilidade entre diferentes plataformas e tecnologias, tornando os sistemas mais adaptáveis às necessidades dos usuários".
+
+A literatura recente sobre IoT aponta que a integração com APIs RESTful é essencial para garantir interoperabilidade e escalabilidade em ambientes complexos, permitindo que sensores e atuadores sejam facilmente conectados a aplicações web e móveis (Aguiar, 2023; Rodrigues, 2024).
+
+\begin{itemize}
+    \item \textbf{Exemplo de citação direta longa:}
+\end{itemize}
+
+Segundo \textcite{Segundo Rodrigo (2024)}, A literatura recente reforça que a integração entre IoT e APIs RESTful é essencial para garantir interoperabilidade, escalabilidade e confiabilidade em ambientes complexos.
+
+\begin{quote}
+Citação direta curta:  
+Segundo Rodrigo (2024), “a interoperabilidade em IoT só é possível por meio de APIs RESTful bem definidas”.
+
+Citação direta longa:  
+Rodrigo (2024) afirma:
+
+“A utilização de APIs RESTful em sistemas IoT não apenas garante a interoperabilidade entre dispositivos, mas também possibilita a escalabilidade e a segurança necessárias para aplicações críticas. Sem esse padrão de comunicação, os sistemas tornam-se fragmentados e pouco confiáveis.”
+
+Citação indireta:  
+De acordo com Rodrigo (2024), a integração de APIs RESTful em sistemas IoT é fundamental para assegurar interoperabilidade e escalabilidade, permitindo que diferentes dispositivos troquem informações de maneira segura e eficiente.
+   
+\end{quote}
+
+Por outro lado, a citação indireta refere-se à reformulação das ideias do autor com as próprias palavras do estudante, sem copiar literalmente o texto. Mesmo assim, é obrigatório indicar a fonte. Por exemplo: O sistema TeX foi desenvolvido por Knuth com o objetivo de produzir livros com alta qualidade tipográfica \cite{knuth1984tex}.
+
+Ao final do documento, as referências serão listadas automaticamente.
+
+\section{Metodologia}
+O sistema foi desenvolvido em duas camadas:
+Backend Node.js: responsável pela criação da API RESTful e gerenciamento dos sensores e atuadores.
+
+Frontend Next.js: interface gráfica para monitoramento e controle, utilizando React e hooks para atualização periódica dos dados.
+
+
+
+
+
+\section{Resultados e Discussões}
+O sistema apresentou:
+
+Monitoramento em tempo real dos sensores.
+
+Controle remoto do relé.
+
+Alternância do status de conexão do dispositivo
+\subsection{Exemplo de Tabela}
+
+
+\begin{table}[H]
+    \centering
+    \caption{ Monitoramento de temperatura, umidade, pressão e presença.}
+    \label{tab:exemplo}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Sensor & Valor Atual & 	Unidade\\ \hline
+        Temperatura  & 25 & °C \\ \hline
+        Umidade& 60 &  porc \\ \hline
+         Pressão & 1013 &  hPa \\ \hline
+         Presença & Detectada&  -\\ \hline
+         
+    
+    \end{tabular}
+\end{table}
+
+\section{Conclusão}
+O projeto demonstrou a viabilidade de integrar sensores e atuadores em uma plataforma IoT com backend e API. Futuramente, pretende-se expandir a solução para incluir análise preditiva e integração com serviços em nuvem
+\section*{Agradecimentos}
+Agradeço à instituição de ensino e ao orientador Gabriel que contribuiu para o desenvolvimento deste trabalho.
+
+
+\printbibliography
+AGUIAR, Claudio. API REST e Internet das Coisas: Conectando o mundo físico ao digital. DIO, 2023.
+
+RODRIGUES, Thaís dos Santos. Expansão de funcionalidades em sistema IoT de controle de acesso através de API HTTP. Universidade Federal de Pernambuco, 2024.
+\end{document}
